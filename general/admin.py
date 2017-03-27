@@ -1,6 +1,7 @@
 import django
 from django.contrib import admin
-from registration.models import Reg
+from general.models import RegWindow
 
 django.contrib.admin.site.register
-admin.site.register(Reg)
+admin.site.register(RegWindow)
+
