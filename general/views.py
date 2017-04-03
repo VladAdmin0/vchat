@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from general.models import RegWindow
 
 
+
 def nothing(reguest):
     name_list = RegWindow.objects.all()
     pass_list = RegWindow.objects.all()
