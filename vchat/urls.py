@@ -6,5 +6,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'^registration/', registration.views),
     # url(r'^chat/', chat.views),
-    # url(r'^$', general.views.nothing, name='main'),
+    url(r'^$', general.views.nothing, name='main'),
 ]
