@@ -70,7 +70,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    },
+    'vchat':{
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'USER': 'vchat_user',
+        'NAME': 'VChat',
+        'PORT': '5432',
+        'HOST': 'localhost'}
 }
 
 
