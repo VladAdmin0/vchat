@@ -6,7 +6,6 @@ from django.db import connections, connection
 def enter(request):
 
     # v = connections['vchat']
-    # c = v.connection
     # c = v.cursor()
     # c.execute('SELECT * FROM users')
     # row = c.dictfetchall()
@@ -15,9 +14,9 @@ def enter(request):
     #     rows = cursor.fetchall()
 
     if request.method == "POST":
-        username = request.POST['login']
+        login = request.POST['login']
         password = request.POST['password']
-        user = auth.authenticate(username=username, password=password)
+        user = auth.authenticate(username=login, password=password)
         if user is not None and user.is_active:
             # Правильный пароль и пользователь "активен"
             auth.login(request, user)

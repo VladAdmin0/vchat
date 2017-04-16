@@ -73,7 +73,7 @@ DATABASES = {
     },
     'vchat':{
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'USER': 'vchat_user',
+        'USER': 'postgres',
         'NAME': 'VChat',
         'PORT': '5432',
         'HOST': 'localhost'}
