@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="." method="GET">
+
+<textarea cols="80" rows="20" readonly>
+</textarea> <br><br>
+
+<textarea cols="80" rows="10">
+</textarea> <br><br>
+
+<input type="submit" value="Send"/>
+</form>
+
+<p>
+    <form action="/detail" method="get">
+    <input type="submit" value="My page"/>
+    </form>
+</p>
+
+{#<p>#}
+{#    <form action="/adressbook" method="get">#}
+{#    <input type="submit" value="adressbook"/>#}
+{#    </form>#}
+{#</p>#}
+
+{% endblock content %}
+
+
+
+

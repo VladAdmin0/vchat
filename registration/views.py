@@ -21,14 +21,16 @@ def register(request):
             error = 'no string'
         else:
             id = id[0]
+            request.session.modefied = True
+            request.session.save()
             return HttpResponseRedirect('/detail/%s' % id)
     return render(request, 'registration/regform.html', {'error': error})
 
 
-def detail(request, id):
+def detail(request, id, param):
     vchat = connections['vchat']
     bd = vchat.cursor()
-    bd.execute("select id, email, username from users where id = %d" % int((id)))
+    bd.execute("select id, email, username from users where %s = '%s'" % (param, id))
     tup = bd.fetchone()
     # tup = (7, 'dsfsdf@sadasd.asdfas', 'sfsdfs')
     # user = {'id': tup[0], 'email': tup[1], 'username': tup[2]}

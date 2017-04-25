@@ -1,4 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-    {{ "Ой, что-то пошло не так!" }}
+    Ой, что-то пошло не так!
+
+    <p>
+    <form action="/registration" method="GET">
+    <label>I want to registration</label>
+    <input type="submit" value="Registration"/>
+    </form>
+    </p>
+
+    <p>
+    <form action="/" method="GET">
+    <label>I want to enter</label>
+    <input type="submit" value="enter"/>
+    </form>
+    </p>
 {% endblock content %}

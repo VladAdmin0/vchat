@@ -28,8 +28,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'chat',
     'general',
-    'registration'
+    'registration',
+    'adressbook',
 ]
+
+# SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+#
+# SESSION_COOKIE_HTTPONLY = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
