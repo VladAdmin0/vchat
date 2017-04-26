@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+
+  Chat  {{ username }}, ({{ email }})
 <form action="." method="GET">
 
 <textarea cols="80" rows="20" readonly>
@@ -17,11 +19,11 @@
     </form>
 </p>
 
-{#<p>#}
-{#    <form action="/adressbook" method="get">#}
-{#    <input type="submit" value="adressbook"/>#}
-{#    </form>#}
-{#</p>#}
+<p>
+    <form action="/adressbook" method="get">
+    <input type="submit" value="adressbook"/>
+    </form>
+</p>
 
 {% endblock content %}
 

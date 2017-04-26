@@ -7,25 +7,46 @@ def default(request, templ):
     return render(request, templ)
 
 
-def enter(request):
-
-    if request.method == "POST":
-        vchat = connections['vchat']
-        bd = vchat.cursor()
-        login = request.POST['login']
-        password = request.POST['password']
-        bd.execute("select id from users where login = '%s' and password = '%s'" % (login, password))
-        res = bd.fetchone()
-
-        if res is not None:
-            id = res[0]
-            request.session.modefied = True
-            request.session.save()
-            return HttpResponseRedirect('/detail/%s' % id)
+def get_session(request):
+    s = None
+    if request.method == "GET":
+        if request.session is not None and request.session.get('user_id') is not None:
+            s = request.session.get('user_id')
+            return s
         else:
-            return HttpResponseRedirect('/invalid')
+            return s
+
+
+def enter(request):
+    # if request.method == "GET":
+    #     if request.session is not None and request.session.get('user_id') is not None:
+    #         return HttpResponseRedirect('/detail/%s' % request.session['user_id'])
+    g = get_session(request)
+    if request.method == "POST":
+        if g is not None:
+           return HttpResponseRedirect('/')
+        else:
+           vchat = connections['vchat']
+           bd = vchat.cursor()
+           login = request.POST['login']
+           password = request.POST['password']
+           bd.execute("select id from users where login = '%s' and password = '%s'" % (login, password))
+           res = bd.fetchone()
+
+           if res is not None:
+               id = res[0]
+               request.session['user_id'] = id
+               request.session.modified = True
+               request.session.save()
+               return HttpResponseRedirect('/detail/%s' % id)
+           else:
+               return HttpResponseRedirect('/invalid')
 
     return render(request, 'general\index.html')
+
+
+
+
 
     # v = connections['vchat']
     # c = v.cursor()

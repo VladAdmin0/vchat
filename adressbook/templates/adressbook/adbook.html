@@ -1,3 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
+    adress book {{ username }}, ({{ email }})
+    <p>
+    <form action="/chat" method="get">
+    <input type="submit" value="Chat">
+    </form>
+    </p>
 {% endblock content %}

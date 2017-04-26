@@ -2,4 +2,16 @@
 
 {% block content %}
     Hello {{ username }}, ({{ email }})
+
+    <form action="/adressbook" method="get">
+    <p>
+        <input type="submit" value="Adressbook"/>
+    </p>
+    </form>
+
+    <form action="/chat" method="get">
+    <p>
+        <input type="submit" value="Chat"/>
+    </p>
+    </form>
 {% endblock content %}
