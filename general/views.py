@@ -12,19 +12,25 @@ def get_session(request):
     if request.method == "GET":
         if request.session is not None and request.session.get('user_id') is not None:
             s = request.session.get('user_id')
-            return s
+            return s, HttpResponseRedirect('/detail/%s' % 'user_id')
         else:
-            return s
+            return s, HttpResponseRedirect('/')
 
 
 def enter(request):
     # if request.method == "GET":
     #     if request.session is not None and request.session.get('user_id') is not None:
     #         return HttpResponseRedirect('/detail/%s' % request.session['user_id'])
-    g = get_session(request)
+    id = get_session(request)
+
+  # if id is not None:
+  #   return HttpResponseRedirect('/detail')
+  # else:
     if request.method == "POST":
-        if g is not None:
-           return HttpResponseRedirect('/')
+        if id is not None:
+           request.session.modified = True
+           request.session.save()
+           return HttpResponseRedirect('/detail/%s' % id)
         else:
            vchat = connections['vchat']
            bd = vchat.cursor()
