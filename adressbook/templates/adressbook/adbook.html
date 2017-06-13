@@ -1,9 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
-    adress book {{ username }}, ({{ email }})
+
+    Adress Book {{ username }}, ({{ email }})
     <p>
-    <form action="/chat" method="get">
-    <input type="submit" value="Chat">
+    <a href="/chat"> Chat </a>
+    </p>
+
+    <p>
+    <a href="/detail"> My profile </a>
+    </p>
+    <p>
+    <form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Add contact" name="add">
+    </form>
+    <form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Delete contact" name="del">
     </form>
     </p>
 {% endblock content %}

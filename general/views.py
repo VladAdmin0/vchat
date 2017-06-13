@@ -9,12 +9,21 @@ def default(request, templ):
 
 def get_session(request):
     s = None
-    if request.method == "GET":
-        if request.session is not None and request.session.get('user_id') is not None:
-            s = request.session.get('user_id')
-            return s, HttpResponseRedirect('/detail/%s' % 'user_id')
-        else:
-            return s, HttpResponseRedirect('/')
+    if request.session is not None and request.session.get('user_id') is not None:
+        s = request.session.get('user_id')
+        return s
+    else:
+       return HttpResponseRedirect('/')
+
+
+def log_out(request):
+    if request.session is not None and request.session.get('user_id') is not None:
+        del request.session['user_id']
+        request.session.modified = True
+        request.session.save()
+        return HttpResponseRedirect('/')
+    else:
+        return HttpResponseRedirect('/')
 
 
 def enter(request):
@@ -26,12 +35,14 @@ def enter(request):
   # if id is not None:
   #   return HttpResponseRedirect('/detail')
   # else:
+  #   if id is not None:
+  #       return HttpResponseRedirect('/detail/%s' % id)
+    if isinstance(id, HttpResponseRedirect)== False:
+        return HttpResponseRedirect('/detail/%s' % id)
+
+
+
     if request.method == "POST":
-        if id is not None:
-           request.session.modified = True
-           request.session.save()
-           return HttpResponseRedirect('/detail/%s' % id)
-        else:
            vchat = connections['vchat']
            bd = vchat.cursor()
            login = request.POST['login']
@@ -42,9 +53,7 @@ def enter(request):
            if res is not None:
                id = res[0]
                request.session['user_id'] = id
-               request.session.modified = True
-               request.session.save()
-               return HttpResponseRedirect('/detail/%s' % id)
+               return HttpResponseRedirect('/detail')
            else:
                return HttpResponseRedirect('/invalid')
 

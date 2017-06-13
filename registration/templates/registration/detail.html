@@ -3,15 +3,14 @@
 {% block content %}
     Hello {{ username }}, ({{ email }})
 
-    <form action="/adressbook" method="get">
-    <p>
-        <input type="submit" value="Adressbook"/>
-    </p>
-    </form>
+<p>
+    <a href="/adressbook"> Adreess book </a>
+</p>
 
-    <form action="/chat" method="get">
-    <p>
-        <input type="submit" value="Chat"/>
-    </p>
-    </form>
+
+<p>
+    <a href="/chat"> Chat </a>
+</p>
+
+
 {% endblock content %}

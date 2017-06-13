@@ -8,8 +8,11 @@ urlpatterns = [
     url(r'^chat/', chat.views.chat),
     url(r'^$', general.views.enter),
     url(r'^invalid/', general.views.default, {"templ": "general\invalid.html"}),
-    url(r'^detail/(?P<id>\d+)', registration.views.detail, {"param": 'id'}),
-    url(r'^detail/(?P<id>[a-zA-Z0-9]+)', registration.views.detail, {"param": 'login'}),
+    url(r'^detail/', registration.views.detail),
+    # url(r'^detail/', registration.views.detail, {"param": 'login'}),
     url(r'^registration/', registration.views.register),
-    url(r'^adressbook/', adressbook.views.adressbook)
+    url(r'^adressbook/', adressbook.views.adressbook),
+    url(r'^logout/', general.views.log_out),
 ]
+# (?P<id>\d+)
+# (?P<id>[a-zA-Z0-9]+)
