@@ -6,6 +6,11 @@ from django.db import connections, connection
 def default(request, templ):
     return render(request, templ)
 
+def base(request):
+    vchat = connections['vchat']
+    bd = vchat.cursor()
+    return bd
+
 
 def get_session(request):
     s = None
@@ -43,8 +48,7 @@ def enter(request):
 
 
     if request.method == "POST":
-           vchat = connections['vchat']
-           bd = vchat.cursor()
+           bd = base(request)
            login = request.POST['login']
            password = request.POST['password']
            bd.execute("select id from users where login = '%s' and password = '%s'" % (login, password))

@@ -13,6 +13,8 @@ urlpatterns = [
     url(r'^registration/', registration.views.register),
     url(r'^adressbook/', adressbook.views.adressbook),
     url(r'^logout/', general.views.log_out),
+    url(r'^add/', adressbook.views.add),
+    url(r'^del/', adressbook.views.delete),
 ]
 # (?P<id>\d+)
 # (?P<id>[a-zA-Z0-9]+)

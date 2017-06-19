@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    Adress Book {{ username }}, ({{ email }})
+    Adress Book {{ user.username }}, ({{ user.email }})
     <p>
     <a href="/chat"> Chat </a>
     </p>
@@ -10,13 +10,24 @@
     <a href="/detail"> My profile </a>
     </p>
     <p>
-    <form method="POST">
+    <form method="POST" action="/add/">
     {% csrf_token %}
     <input type="submit" value="Add contact" name="add">
+    <input type="text" name="add_contact" placeholder="Enter Login for add">
     </form>
-    <form method="POST">
+    <form method="POST" action="/del/">
     {% csrf_token %}
     <input type="submit" value="Delete contact" name="del">
+    <input type="text" name="del_contact" placeholder="Enter Login for delete" >
     </form>
     </p>
+
+    <p>
+    Contacts:
+        {% for name in logins %}
+        <div>
+            <a href="/chat/{{ name }}">chat with {{ name }}</a> </div>
+        {% endfor %}
+    </p>
+
 {% endblock content %}

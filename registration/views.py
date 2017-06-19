@@ -1,7 +1,7 @@
 from django.shortcuts import render_to_response, HttpResponse, HttpResponseRedirect,render
 from django.contrib import auth
 from django.db import connections, connection
-from general.views import get_session
+from general.views import get_session, base
 
 
 def register(request):
@@ -12,10 +12,9 @@ def register(request):
         email = request.POST['email']
         password = request.POST['password']
 
-        vchat = connections['vchat']
-        bd = vchat.cursor()
+        bd = base(request)
         bd.execute("select login, username from users where login = '%s' and username = '%s'" % (login, username))
-        res = bd.fetchone
+        res = bd.fetchone()
         if res is not None:
             return HttpResponseRedirect('/invalid')
         else:
@@ -44,8 +43,7 @@ def get_user(request):
     id = get_session(request)
     if isinstance(id, HttpResponseRedirect):
         return id
-    vchat = connections['vchat']
-    bd = vchat.cursor()
+    bd = base(request)
     bd.execute("select id, email, username from users where id  = '%s'" % id)
     tup = bd.fetchone()
     # tup = (7, 'dsfsdf@sadasd.asdfas', 'sfsdfs')
