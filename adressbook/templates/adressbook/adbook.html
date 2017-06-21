@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% block content %}
 
     Adress Book {{ user.username }}, ({{ user.email }})
@@ -29,5 +30,5 @@
             <a href="/chat/{{ name }}">chat with {{ name }}</a> </div>
         {% endfor %}
     </p>
-
+{{ block.super }}
 {% endblock content %}
