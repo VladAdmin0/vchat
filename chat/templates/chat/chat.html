@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-  Chat  {{ username }}, ({{ email }})
+  Chat  {{ user.username }}, ({{ user.email }}) with {{ contact }}
 <form action="." method="GET">
 
 <textarea cols="80" rows="20" readonly>

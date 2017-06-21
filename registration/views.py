@@ -1,6 +1,4 @@
 from django.shortcuts import render_to_response, HttpResponse, HttpResponseRedirect,render
-from django.contrib import auth
-from django.db import connections, connection
 from general.views import get_session, base
 
 
