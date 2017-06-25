@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^logout/', general.views.log_out),
     url(r'^add/', adressbook.views.add),
     url(r'^del/', adressbook.views.delete),
+    # url(r'^send/', chat.views.send),
 ]
 # (?P<id>\d+)
 # (?P<id>[a-zA-Z0-9]+)

@@ -27,7 +27,8 @@
     Contacts:
         {% for name in logins %}
         <div>
-            <a href="/chat/{{ name }}">chat with {{ name }}</a> </div>
+            <a href="/chat/{{ name }}">chat with {{ name }}</a>
+        </div>
         {% endfor %}
     </p>
 {{ block.super }}

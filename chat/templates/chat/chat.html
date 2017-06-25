@@ -2,12 +2,24 @@
 {% block content %}
 
   Chat  {{ user.username }}, ({{ user.email }}) with {{ contact }}
-<form action="." method="GET">
 
+<form method="post">
+{% csrf_token %}
+<p>
 <textarea cols="80" rows="20" readonly>
-</textarea> <br><br>
+{% for text in id %}
+    {{ text }}
+    {% for text in id_cont %}
+        {{ text }}
+        {% return %}
+    {% endfor %}
+{% endfor %}
 
-<textarea cols="80" rows="10">
+
+</textarea> <br><br>
+</p>
+
+<textarea cols="80" rows="10" name="sender">
 </textarea> <br><br>
 
 <input type="submit" value="Send"/>
