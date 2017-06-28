@@ -22,14 +22,6 @@ def adressbook(request):
         bd.execute("select id, login from users WHERE id IN (%s)" % (','.join(contact_ids)))
         for c in bd.fetchall():
             logins.append(str(c[1]))
-        # for i in cont:
-        #     bd.execute("select login from users WHERE id = '%s'" % (i))
-        #     login = bd.fetchone()
-        #     logins += login
-        # res = dict(zip((cont), logins))
-        # conts = ()
-        # for i in cont:
-        #     conts += i
     template_params = {
         'user': user,
         'logins': logins

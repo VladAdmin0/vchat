@@ -6,17 +6,18 @@
 <form method="post">
 {% csrf_token %}
 <p>
-<textarea cols="80" rows="20" readonly>
-{% for text in id %}
-    {{ text }}
-    {% for text in id_cont %}
-        {{ text }}
-        {% return %}
-    {% endfor %}
-{% endfor %}
 
+{% for key, item in mes.items %}
+    <div>
+{{ item.send }} {{ item.login }}<br>
+{{ item.text }}
+    </div>
+{% endfor%}
 
-</textarea> <br><br>
+{#{{ mes }}#}
+{#{% for key, value in messages %}#}
+{#{{ key }}|{{ value }}#}
+{#{% endfor %}#}
 </p>
 
 <textarea cols="80" rows="10" name="sender">
