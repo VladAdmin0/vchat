@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 478 178" style="enable-background:new 0 0 478 178;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_2_);}
+	.st2{fill:#0080B8;}
+	.st3{fill:url(#SVGID_3_);}
+	.st4{fill:url(#SVGID_4_);}
+	.st5{fill:#5252EF;}
+	.st6{font-family:'ComicSansMS';}
+	.st7{font-size:48px;}
+</style>
+<symbol  id="Icon_1_-_Comments2" viewBox="-31 -25.8 62 51.6">
+	
+		<radialGradient id="SVGID_1_" cx="5106.2144" cy="59488.9727" r="20.9992" gradientTransform="matrix(1.4762 0 0 0.2143 -7537.7935 -12769.7676)" gradientUnits="userSpaceOnUse">
+		<stop  offset="9.815951e-02" style="stop-color:#DFDCDB;stop-opacity:0.85"/>
+		<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
+	</radialGradient>
+	<ellipse class="st0" cx="0" cy="-21.3" rx="31" ry="4.5"/>
+	<g>
+		<g>
+			
+				<radialGradient id="SVGID_2_" cx="17.4324" cy="-11.3923" r="36.4851" gradientTransform="matrix(1 0 0 1 4.000000e-04 0)" gradientUnits="userSpaceOnUse">
+				<stop  offset="0" style="stop-color:#D1EDFB"/>
+				<stop  offset="1" style="stop-color:#3DA3DB"/>
+			</radialGradient>
+			<path class="st1" d="M8.4-11.7H8.3C5.6-12.6,2.8-13,0-13c-13,0-23.5,8.6-23.5,19.1C-23.5,16.7-13,25.3,0,25.3s23.5-8.6,23.5-19.1
+				c0-4.1-1.6-8.1-4.6-11.4l-0.2-0.2L23.2-16L8.4-11.7z"/>
+			<g>
+				<path class="st2" d="M0,24.8c12.7,0,23-8.4,23-18.6c0-4-1.6-7.9-4.5-11.1l-0.4-0.5L18.3-6l3.9-9.3l-13.6,4l-0.3,0.1L8-11.3
+					c-2.6-0.8-5.3-1.2-8.1-1.2c-12.7,0-23,8.4-23,18.6C-23,16.4-12.7,24.8,0,24.8 M0,25.8c-13.3,0-24-8.8-24-19.6s10.7-19.6,24-19.6
+					c2.9,0,5.8,0.4,8.4,1.2L24-16.8L19.2-5.6c3,3.3,4.8,7.3,4.8,11.8C24,17,13.3,25.8,0,25.8L0,25.8z"/>
+			</g>
+		</g>
+		<g>
+			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-14.3527" y1="32.7459" x2="6.3105" y2="-5.4572">
+				<stop  offset="0" style="stop-color:#FFFFFF"/>
+				<stop  offset="1" style="stop-color:#000000"/>
+			</linearGradient>
+			<path class="st3" d="M21.5,10c-2.2,7.9-11,13.8-21.5,13.8c-12.1,0-22-7.9-22-17.6c0-5.8,3.5-10.9,8.9-14.1C-11,1.5,3.4,9,21.5,10
+				z"/>
+		</g>
+		<g>
+			<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="-6.3142" y1="31.7781" x2="0.4144" y2="-1.1414">
+				<stop  offset="0" style="stop-color:#FFFFFF"/>
+				<stop  offset="1" style="stop-color:#000000"/>
+			</linearGradient>
+			<path class="st4" d="M-20,4.2c0,9.7,9.9,17.6,22,17.6c6.4,0,12.1-2.2,16.1-5.7c-4,4.6-10.6,7.7-18.1,7.7c-12.1,0-22-7.9-22-17.6
+				c0-4.6,2.2-8.8,5.9-12C-18.6-3-20,0.5-20,4.2z"/>
+		</g>
+	</g>
+</symbol>
+<use xlink:href="#Icon_1_-_Comments2"  width="62" height="51.6" x="-31" y="-25.8" transform="matrix(0.9289 -1.640171e-02 -1.625617e-02 -0.9204 102.0777 36.2067)" style="overflow:visible;"/>
+<use xlink:href="#Icon_1_-_Comments2"  width="62" height="51.6" x="-31" y="-25.8" transform="matrix(-1 0 0 -1 80.5911 36.0376)" style="overflow:visible;enable-background:new    ;"/>
+<text transform="matrix(1 0 0 1 101.6667 88.6667)" class="st5 st6 st7">vChat</text>
+</svg>

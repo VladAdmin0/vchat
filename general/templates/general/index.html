@@ -1,7 +1,10 @@
 {% extends "general.html" %}
 {% block content %}
-    <h1>Welcome</h1>
 
+    <div id="h1">
+    <h1>Welcome</h1>
+    </div>
+    <div id="auth">
     <form action="" method="post">
 
         {% csrf_token %}
@@ -14,14 +17,15 @@
             <label>Пароль </label><br><br>
             <input type=password name="password" value=""/>
          </p>
+
         <p>
             <input type="submit" value="Log In"/>
         </p>
 
     </form>
-    <p>
-        <form action="/registration" method="GET">
+    <form action="/registration" method="GET">
         <input type="submit" value="Registration"/>
-        </form>
-    </p>
+    </form>
+    </div>
+
 {% endblock content %}
